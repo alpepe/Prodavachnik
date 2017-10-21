@@ -113,7 +113,7 @@
 
     // Loading of adverts
     $.mockjax(function (requestSettings) {
-        if (requestSettings.url==="https://mock.api.com/appdata/kid_rk/adverts" &&
+        if (requestSettings.url === "https://mock.api.com/appdata/kid_rk/adverts" &&
             requestSettings.method === "GET") {
             return {
                 response: function (origSettings) {
@@ -127,6 +127,8 @@
             };
         }
     });
+
+
     // Create advert
     $.mockjax(function (requestSettings) {
         if (requestSettings.url === "https://mock.api.com/appdata/kid_rk/adverts" &&
@@ -181,6 +183,7 @@
         }
     });
 
+
     // Edit advert
     $.mockjax(function (requestSettings) {
         if (requestSettings.url.match(/https:\/\/mock\.api\.com\/appdata\/kid_rk\/adverts\/(.+)/) &&
@@ -208,5 +211,4 @@
             };
         }
     });
-
 })();

@@ -2,8 +2,6 @@ function startApp() {
     showHideMenuLinks();
     showHomeView();
 
-
-
     // Bind the navigation menu links
     $("#linkHome").click(showHomeView);
     $("#linkLogin").click(showLoginView);
@@ -12,18 +10,15 @@ function startApp() {
     $("#linkCreateAd").click(showCreateAdView);
     $("#linkLogout").click(logoutUser);
 
-
     // Bind the form submit buttons
     $("#buttonLoginUser").click(loginUser);
     $("#buttonRegisterUser").click(registerUser);
     $("#buttonCreateAd").click(createAdvert);
     $("#buttonEditAd").click(editAdvert);
 
-
     const kinveyBaseUrl = "https://mock.api.com/";
     const kinveyAppKey = "kid_rk";
     const kinveyAppSecret = "736804a668";
-
 
     function showView(viewName) {
         // Hide all views and show the selected view only
@@ -49,7 +44,6 @@ function startApp() {
             $("#linkLogout").show();
         }
     }
-
 
     function showHomeView() {
         showView('viewHome');
@@ -92,7 +86,6 @@ function startApp() {
         function loginSuccess(userInfo) {
             saveAuthInSession(userInfo);
             showHideMenuLinks();
-            showHomeView();
             listAdverts();
         }
     }
@@ -128,7 +121,6 @@ function startApp() {
             console.log(userInfo);
             saveAuthInSession(userInfo);
             showHideMenuLinks();
-            showHomeView();
             listAdverts();
         }
     }
@@ -140,6 +132,7 @@ function startApp() {
         showHideMenuLinks();
         showHomeView();
     }
+
     // advertisement/all
     function listAdverts() {
         $('#ads').empty();
@@ -193,6 +186,7 @@ function startApp() {
             }
         }
     }
+
     // advertisement/create
     function createAdvert() {
         const kinveyAuthHeaders = {
@@ -304,5 +298,4 @@ function startApp() {
             listAdverts();
         }
     }
-
 }
